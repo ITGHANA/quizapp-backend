@@ -1,1 +1,5 @@
-her
+.venv/
+__pycache__/
+*.pyc
+*.pot
+*.sqlite3
