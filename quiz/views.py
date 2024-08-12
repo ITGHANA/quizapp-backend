@@ -1,9 +1,15 @@
 from rest_framework import viewsets, permissions, status
 from rest_framework.decorators import action
 from rest_framework.response import Response
-from .models import Quiz, Question, Choice, UserQuizAttempt, UserRanking
-from .serializers import QuizSerializer, QuestionSerializer, ChoiceSerializer, UserQuizAttemptSerializer, UserRankingSerializer, UserSerializer
+from .models import Quiz, Question, Choice, UserQuizAttempt, UserRanking, QuizCategory
+from .serializers import QuizSerializer, QuestionSerializer, ChoiceSerializer, UserQuizAttemptSerializer, UserRankingSerializer, UserSerializer, QuizCategorySerializer
 from accounts.models import CustomUser
+
+class QuizCategoryViewSet(viewsets.ModelViewSet):
+    queryset = QuizCategory.objects.all()
+    serializer_class = QuizCategorySerializer
+
+
 
 class QuizViewSet(viewsets.ModelViewSet):
     queryset = Quiz.objects.all()
