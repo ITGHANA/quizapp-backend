@@ -1,7 +1,12 @@
 from rest_framework import serializers
-from .models import Quiz, Question, Choice, UserQuizAttempt, UserRanking
+from .models import Quiz, Question, Choice, UserQuizAttempt, UserRanking,QuizCategory
 from django.contrib.auth.models import User
 from accounts.models import CustomUser
+
+class QuizCategorySerializer(serializers.ModelSerializer):
+    class Meta:
+        model = QuizCategory
+        fields = ['id', 'name']
 
 class ChoiceSerializer(serializers.ModelSerializer):
     class Meta:
